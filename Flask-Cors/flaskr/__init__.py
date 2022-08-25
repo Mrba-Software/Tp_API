@@ -1,6 +1,5 @@
 # Import Dependencies
-from urllib import request
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from models import setup_db, Plant, db
 from flask_cors import CORS, cross_origin
 

@@ -1,12 +1,11 @@
 import os
 from sqlalchemy import Column, String, Integer, Boolean, create_engine
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 import json                                               
 from sqlalchemy.sql.schema import PrimaryKeyConstraint         
 
 database_name = "plants"
-database_path ="postgres://{}:{}@{}/{}".format('student', 'student','localhost:5432', database_name)
+database_path ="postgresql://{}:{}@{}/{}".format('student', 'student','pgsql:5432', database_name)
 
 db = SQLAlchemy()
 

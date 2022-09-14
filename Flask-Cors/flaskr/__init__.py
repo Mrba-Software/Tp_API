@@ -1,15 +1,12 @@
 # Import Dependencies
-from urllib import request
-from flask import Flask, jsonify
-from models import setup_db, Plant,Migrate,db
+from flask import Flask, jsonify, request
+from models import setup_db, Plant, db
 from flask_cors import CORS, cross_origin
 
 def create_app(test_config=None):
-    app = create_app(test_config)
     app = Flask(__name__, instance_relative_config=True)
     setup_db(app)
     CORS(app, resources={r"/api/*": {"origins": "*"}})
-    #migrate = Migrate(app,db)
 
     # CORS Headers pour controler les requetes dans l'appli:
     @app.after_request
